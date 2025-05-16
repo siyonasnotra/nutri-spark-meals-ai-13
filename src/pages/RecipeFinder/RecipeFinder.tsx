@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChartContainer } from "@/components/ui/chart";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 import RecipeDetail from "@/components/recipe/RecipeDetail";
 import { toast } from "sonner";
 
@@ -211,16 +210,18 @@ const RecipeFinder = () => {
                   <p className="text-sm text-gray-500 mb-2">Common ingredients you might have:</p>
                   <ScrollArea className="h-20">
                     <div className="flex flex-wrap gap-2">
-                      {commonIngredients.filter(ing => !ingredients.includes(ing)).map((ing, i) => (
-                        <Badge 
-                          key={i} 
-                          variant="outline" 
-                          className="px-2 py-1 cursor-pointer hover:bg-primary-100"
-                          onClick={() => handleSuggestedIngredient(ing)}
-                        >
-                          {ing}
-                        </Badge>
-                      ))}
+                      {commonIngredients
+                        .filter(ing => !ingredients.includes(ing))
+                        .map((ing, i) => (
+                          <Badge 
+                            key={i} 
+                            variant="outline" 
+                            className="px-2 py-1 cursor-pointer hover:bg-primary-100"
+                            onClick={() => handleSuggestedIngredient(ing)}
+                          >
+                            {ing}
+                          </Badge>
+                        ))}
                     </div>
                   </ScrollArea>
                 </div>
@@ -284,7 +285,7 @@ const RecipeFinder = () => {
                               <div className="flex gap-2">
                                 {Object.entries(recipe.nutrients).map(([key, value]) => (
                                   <Badge key={key} variant="outline" className="capitalize">
-                                    {key}: {value}
+                                    {key}: {String(value)}
                                   </Badge>
                                 ))}
                               </div>
