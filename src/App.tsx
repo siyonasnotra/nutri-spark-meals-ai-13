@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import ScanFood from "./pages/Scan/ScanFood";
 import Profile from "./pages/Profile/Profile";
 import Grocery from "./pages/Grocery/Grocery";
+import RecipeFinder from "./pages/RecipeFinder/RecipeFinder";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/scan" element={<ScanFood />} />
           <Route path="/grocery" element={<Grocery />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/recipe-finder" element={<RecipeFinder />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
