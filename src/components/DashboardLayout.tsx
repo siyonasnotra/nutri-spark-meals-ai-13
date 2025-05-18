@@ -1,6 +1,6 @@
 
 import React, { ReactNode } from "react";
-import { Home, Camera, ShoppingBag, User, ChefHat } from "lucide-react";
+import { Home, Camera, ShoppingBag, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -72,12 +72,6 @@ const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
             label="Scan"
             to="/scan"
             active={pathname === "/scan"}
-          />
-          <NavItem 
-            icon={ChefHat}
-            label="Recipes"
-            to="/recipe-finder"
-            active={pathname === "/recipe-finder"}
           />
           <NavItem 
             icon={ShoppingBag}
